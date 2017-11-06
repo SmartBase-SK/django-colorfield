@@ -36,7 +36,7 @@ class ColorField(models.CharField):
         return super(ColorField, self).formfield(**kwargs)
     
     def clean(self, value, model_instance):
-        if not value:
+        if not value or value == 'None':
             value = ""
         return super().clean(value, model_instance)
 
