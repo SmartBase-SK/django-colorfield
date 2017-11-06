@@ -34,6 +34,11 @@ class ColorField(models.CharField):
     def formfield(self, **kwargs):
         kwargs['widget'] = ColorWidget
         return super(ColorField, self).formfield(**kwargs)
+    
+    def clean(self, value, model_instance):
+        if not value:
+            value = ""
+        return super().clean(value, model_instance)
 
 try:
     from south.modelsinspector import add_introspection_rules
