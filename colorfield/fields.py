@@ -9,7 +9,7 @@ from django.core.validators import RegexValidator
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 
-color_re = re.compile('^(#[0-9a-f]{3}|#[0-9a-f]{6}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))')
+color_re = re.compile('^(#[0-9a-fA-F]{3}|#[0-9a-fA-F]{6}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))')
 validate_color = RegexValidator(color_re, _('Enter a valid color.'), 'invalid')
 
 
