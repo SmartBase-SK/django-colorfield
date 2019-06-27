@@ -1,4 +1,5 @@
-<input type="text" name="{{ name }}" value="{{ value }}" id="{{ attrs.id }}"/>
+<input type="text" name="{{ name }}" {% if value %}value="{{ value }}"{% endif %} id="{{ attrs.id }}"
+class="colorfield_field jscolor {% if not is_required %}{required:false}{% endif %}"/>
 <script>
 (function(window, $, undefined){
 	$("#{{ attrs.id }}").spectrum({
@@ -20,6 +21,6 @@
 	        ["#900","#b45f06","#bf9000","#38761d","#134f5c","#0b5394","#351c75","#741b47"],
 	        ["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
 	    ]
-	});	
+	});
 })(window, django.jQuery);
 </script>
