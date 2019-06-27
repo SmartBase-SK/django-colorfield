@@ -26,7 +26,6 @@ class ColorWidget(forms.Widget):
 
     def value_from_datadict(self, data, files, name):
         ret = super(ColorWidget, self).value_from_datadict(data, files, name)
-        ret = '#%s' % ret if ret else ret
         return ret
 
 
