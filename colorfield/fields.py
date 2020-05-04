@@ -15,7 +15,7 @@ validate_color = RegexValidator(color_re, _('Enter a valid color.'), 'invalid')
 
 class ColorWidget(forms.Widget):
     class Media:
-        js = ['colorfield/spectrum/spectrum.js']
+        js = ['admin/js/jquery.init.js', 'colorfield/spectrum/spectrum.js']
         css = {
             'all': ('colorfield/spectrum/spectrum.css',)
         }
